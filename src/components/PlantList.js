@@ -1,7 +1,9 @@
 import React from "react";
 import PlantCard from "./PlantCard";
 
-function PlantList({plantList, searchByName}) {
+function PlantList({plantList, searchByName, onHandleRemove}) {
+
+  
   
   const filteredPlants = plantList.filter(plant =>{
       if(plant.name.toLowerCase().includes(searchByName.toLowerCase())){
@@ -10,7 +12,10 @@ function PlantList({plantList, searchByName}) {
   })
 
   const plantDetails = filteredPlants.map(plant => {
-    return <PlantCard key={plant.id} name= {plant.name} image={plant.image} price={plant.price} />  
+    return (
+      <PlantCard id= {plant.id} key={plant.id} name= {plant.name} image={plant.image} 
+        price={plant.price} onHandleRemove={onHandleRemove}/> 
+    )
  })
 
   return (

@@ -13,7 +13,7 @@ function NewPlantForm({onHandleSubmitForm}) {
   }
 
   function handlePrice(e){
-  setPrice(e.target.value)
+  setPrice(parseFloat(e.target.value))
   }
 
   function handleSubmit(e){
@@ -22,7 +22,7 @@ function NewPlantForm({onHandleSubmitForm}) {
     const newPlant = {
       name,
       image,
-      price: parseInt(price)
+      price
     }
      
     fetch('http://localhost:6001/plants', {

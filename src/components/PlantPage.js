@@ -23,11 +23,17 @@ function PlantPage() {
   function handleNewPlant(plantObj){
       setPlants([...plants, plantObj])
   }
+
+  function handleRemovePlant(plantObj){
+     const updatedPlant = plants.filter(plant => plant.id !== plantObj)
+     setPlants(updatedPlant)
+  }
+
   return (
     <main>
       <NewPlantForm onHandleSubmitForm={handleNewPlant}/>
       <Search searchByName={searchByName} setSearchByName= {setSearchByName}/>
-      <PlantList plantList = {plants} searchByName={searchByName}/>
+      <PlantList plantList = {plants} searchByName={searchByName} onHandleRemove={handleRemovePlant}/>
     </main>
   );
 }
