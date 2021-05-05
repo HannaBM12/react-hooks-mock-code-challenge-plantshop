@@ -1,6 +1,7 @@
+
 import React from "react";
 
-function Search({searchByName, setSearchByName}) {
+function Search({searchItem, setSearchItem}) {
   return (
     <div className="searchbar">
       <label htmlFor="search">Search Plants:</label>
@@ -8,8 +9,8 @@ function Search({searchByName, setSearchByName}) {
         type="text"
         id="search"
         placeholder="Type a name to search..."
-        value={searchByName}
-        onChange={(e) => {setSearchByName(e.target.value)}}
+        value={searchItem}
+        onChange={(e) => setSearchItem(e.target.value)}
       />
     </div>
   );

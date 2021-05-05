@@ -53,6 +53,12 @@
       "image": "https://bloomscape.com/wp-content/uploads/2020/11/bloomscape_dracaena-rikki-cane_stone-scaled.jpg?ver=333303",
       "price": 33,
       "id": 10
+    },
+    {
+      "name": "Fiddle Leaf Fig",
+      "image": "https://bloomscape.com/wp-content/uploads/2020/08/bloomscape_fiddle-leaf-fig_stone-alt.jpg?ver=279587",
+      "price": 25.53,
+      "id": 11
     }
   ]
 }

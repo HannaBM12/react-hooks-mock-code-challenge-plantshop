@@ -1,25 +1,19 @@
+
 import React from "react";
 import PlantCard from "./PlantCard";
 
-function PlantList({plantList, searchByName, onHandleRemove}) {
+function PlantList({plants, searchItem}) {
+  // console.log(plants)
 
-  
-  
-  const filteredPlants = plantList.filter(plant =>{
-      if(plant.name.toLowerCase().includes(searchByName.toLowerCase())){
-        return plant
-      }
-  })
+  const searchedPlants = plants.filter(plant =>
+    plant.name.toLowerCase().includes(searchItem.toLowerCase()))
 
-  const plantDetails = filteredPlants.map(plant => {
-    return (
-      <PlantCard id= {plant.id} key={plant.id} name= {plant.name} image={plant.image} 
-        price={plant.price} onHandleRemove={onHandleRemove}/> 
-    )
- })
+
+  const cards = searchedPlants.map(plant => 
+    <PlantCard key= {plant.id} {...plant}/>)
 
   return (
-    <ul className="cards"> {plantDetails} </ul>
+    <ul className="cards">{cards}</ul>
   );
 }
 
